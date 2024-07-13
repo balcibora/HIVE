@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.VeryLargeScoreboardController">
+   <children>
+      <Label fx:id="rankLabel" layoutX="29.0" layoutY="11.0" text="Rank" />
+      <Label fx:id="nameLabel" layoutX="202.0" layoutY="11.0" text="Name" />
+      <Label fx:id="streakLabel" layoutX="408.0" layoutY="11.0" text="Streak" />
+      <Label fx:id="questionSolvedLabel" layoutX="536.0" layoutY="11.0" text="Questions Solved" />
+   </children>
+</AnchorPane>

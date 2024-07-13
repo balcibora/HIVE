@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="519.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.QuestionPaneController">
+   <children>
+      <Button fx:id="solveButton" layoutX="455.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#onButtonClicked" text="Solve" />
+      <Label fx:id="titleLabel" layoutX="6.0" layoutY="12.0" prefHeight="21.0" prefWidth="146.0" text="Label" />
+      <Label fx:id="diffLabel" layoutX="176.0" layoutY="12.0" prefHeight="21.0" prefWidth="58.0" text="Label" />
+      <Label fx:id="langLabel" layoutX="277.0" layoutY="12.0" prefHeight="21.0" prefWidth="70.0" text="Label" />
+      <Label fx:id="qTypeLabel" layoutX="339.0" layoutY="12.0" prefHeight="21.0" prefWidth="94.0" text="Label" />
+   </children>
+</AnchorPane>

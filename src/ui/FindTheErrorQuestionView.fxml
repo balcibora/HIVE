@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.5" prefWidth="518.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FindTheErrorQuestionViewController">
+   <children>
+      <TextArea fx:id="questionTextArea" layoutX="16.0" layoutY="100.0" prefHeight="329.0" prefWidth="357.0" promptText="Write Question Text/Prompt HERE" style="-fx-background-color: black; -fx-border-radius: 5;" />
+      <TextField fx:id="qTitleField" layoutX="16.0" layoutY="52.0" prefHeight="30.0" prefWidth="357.0" promptText="Enter the title of the question" style="-fx-background-color: #FFE878; -fx-border-radius: 5; -fx-background-radius: 5;" />
+      <Button fx:id="toTheMenuButton" layoutX="16.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#onToTheMenuClicked" style="-fx-background-color: #FFE878; -fx-background-radius: 5; -fx-border-radius: 5;" text="Back to Menu" />
+      <TextArea fx:id="answerTextArea" layoutX="16.0" layoutY="450.0" prefHeight="56.0" prefWidth="357.0" promptText="Write the Answer Here (the number of line which the error is)" style="-fx-background-color: black; -fx-border-radius: 5;" />
+      <Button fx:id="buttonSaveExit" alignment="CENTER" layoutX="391.0" layoutY="429.0" mnemonicParsing="false" onMouseClicked="#onButtonSaveClicked" prefHeight="41.0" prefWidth="112.0" style="-fx-background-color: #FFE878; -fx-border-radius: 5;" text="Save &amp; Exit" />
+      <Button fx:id="buttonOnlyExit" alignment="CENTER" layoutX="391.0" layoutY="484.0" mnemonicParsing="false" onMouseClicked="#onButtonOnlyExitClicked" prefHeight="50.0" prefWidth="112.0" style="-fx-background-color: #FFE878; -fx-border-radius: 5;" text="Exit without &#10;    saving" />
+   </children>
+</AnchorPane>
