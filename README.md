@@ -3,12 +3,12 @@
 H.I.V.E. is a coding application designed by team .wasp that contains various coding questions for users and an admin interface for admins to add new questions to the database.
 
 Members of team ".wasp":
-[@octocat](https://github.com/halavurtberke),
-[@octocat](https://github.com/balcibora),
-[@octocat](https://github.com/joonullus),
-[@octocat](https://github.com/esertt),
-[@octocat](https://github.com/erkam3),
-[@octocat](https://github.com/Gokdeniz-Derelioglu)
+[@halavurtberke](https://github.com/halavurtberke),
+[@balcibora](https://github.com/balcibora),
+[@joonullus](https://github.com/joonullus),
+[@esertt](https://github.com/esertt),
+[@erkam3](https://github.com/erkam3),
+[@Gokdeniz-Derelioglu](https://github.com/Gokdeniz-Derelioglu)
 
 ## On how to Run the program
 
