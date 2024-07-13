@@ -1,23 +1,6 @@
 package databasetest1.demo;
-/* In theory, this code should work (theory correct, code works)
- * I adapted the CompilerApi class to work with GPT
- * Some necessary additions were:
- * - GPT model
- * - Change in POST content
- * - Overall changes in json formatting and letter capitalizations
- * 
- * Another required change is:
- * - addition of a parameter to change the apikey (this is NOT optional, it is required in order to switch between accounts)
- * 
- * Hopefully it works :D (It does.)
- * We need to hide the api keys somehow :p
- * 
- * PS. - The final part of the code is:
- * 1. The ugliest thing I have ever seen
- * 2. Something so disgusting that I would also do it
- * 3. Something that I also did in order for the code to work
- * 
- * So, it works. But not as I intended... IT WORKS THOUGH. By brute force.
+/* 
+ * Code for gpt api connection
  */
 import java.io.IOException;
 import java.net.URI;
@@ -65,19 +48,12 @@ public class GptApi {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        //the super does not set the apikey of this object for some reason.
-        //so when the apikey is left blank and when you try to take it only as an input, it does not get updated and is left blank
-        //so there is an error since THERE IS NO APIKEY PRESENT
-        //I DON'T KNOW WHY, AND I HATE ABSTRACT CLASSES
     }
 
-    //a setter also seems appropriate to change the key when needed, perhaps an accountselector class should also be implemented?
     public void setKey(String key) {
         this.ApiKey = key;
     }
 
-    //This part of the code can be carried to the abstract class maybe? But we would still have to override it I guess, since the content is different.
     public String getAnswer(int initialKeyNumber, int currentKeyNumber) throws URISyntaxException, IOException, InterruptedException{
         
         //make the body of request
@@ -91,8 +67,8 @@ public class GptApi {
         .header("Content-Type", ContentType)
         .header("Authorization", "Bearer " + this.ApiKey)
         .header("X-RapidAPI-Host", ApiHost)
-        .method("POST", HttpRequest.BodyPublishers.ofString(body)) //This part is no longer wtf
-        .build(); //the order is different from my original code, that might cause some issues. Just noting it down here just in case.
+        .method("POST", HttpRequest.BodyPublishers.ofString(body)) 
+        .build(); 
 
         //tries to get a response
         try 
@@ -103,7 +79,7 @@ public class GptApi {
             System.out.println("\n==HTML response code: " + errorCode + "==\n");
             if (errorCode == 200)
             {
-                //we could do something here
+                //we could do something here if required, but it is not for now.
             }
             else
             {
@@ -125,18 +101,21 @@ public class GptApi {
         }   
     }
 
-    private String changeAPIKey(int initialKeyNumber, int currentKeyNumber) throws URISyntaxException, IOException, InterruptedException { //I don't enjoy the throws but they are required I guess...
+    //This method works as intended: it keeps changing the apikey from the keyList but the OpenAI API is smarter and doesn't allow multiple requests from the same IP adress I guess.
+    //I am not sure how they prevent it, but looping through a list of api keys and sending multiple requests does not work, even though the code itself does.
+    //Also, we are aware that this is not the best practice and we would pay for the api services but this was for demonstration purposes only. Since we are students...
+    private String changeAPIKey(int initialKeyNumber, int currentKeyNumber) throws URISyntaxException, IOException, InterruptedException {
         String output;
         currentKeyNumber = (currentKeyNumber + 1) % accountNumber;
         this.ApiKey = keyList.get(currentKeyNumber);
 
         if (initialKeyNumber % accountNumber == currentKeyNumber % accountNumber + 1)
         {
-            output = "true"; //terminate everything, we failed.
+            output = "true"; //basically stop here
         }
         else
         {
-            output = getAnswer(initialKeyNumber, currentKeyNumber); //we can keeep going bro, keep looking 
+            output = getAnswer(initialKeyNumber, currentKeyNumber); //we can keeep going
         }
         return output;
     }
