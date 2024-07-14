@@ -13,7 +13,7 @@ Members of team ".wasp":
 ## On how to Run the program
 
 In order to run the program properly, follow the steps below:
-1. First, make sure that you have Maven installed on your device: https://maven.apache.org/download.cgi. 
+1. First, make sure that you have Maven installed and properly working on your device: https://maven.apache.org/download.cgi. 
 2. Navigate to the ServerLauncher.java class and fill the .env part in the following code (represented with "//here") with the path to your service key to the/your database (more info about the database below): "FileInputStream serviceAccount = new FileInputStream(//here)".
 3. Navigate to the GptApi.java class and set the .env part in the following code to your own OpenAI API key: "private String ApiKey = //here".
 4. Navigate to the CompilerApi.java class and fill in the .env in the following code to your own Online Code Compiler API key: super(//here, "online-code-compiler.p.rapidapi.com", "application/json").
